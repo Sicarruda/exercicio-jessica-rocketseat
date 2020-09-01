@@ -49,8 +49,22 @@ quadrado.onmousemove = trocaCor;
 var nomes = ["Diego", "Gabriel", "Lucas"];
 
 var elementoUl = document.createElement('ul');
-elementoUl.setAttribute('li', nomes);
+
+for(var i=0;i<nomes.length;i++){
+  var tmp = document.createElement('li');
+  tmp.innerHTML = nomes[i];
+  tmp.style.color = getRandomColor();
+  elementoUl.appendChild(tmp);
+}
+
 var divBotao = document.querySelector("div#botao");
 divBotao.appendChild(elementoUl);
 
-console.log(elementoUl);
+function adicionar(){
+  var tmp = document.createElement('li');
+  tmp.innerHTML = document.querySelector('input').value;
+  document.querySelector('input').value = "";
+  document.querySelector('input').focus();
+  tmp.style.color = getRandomColor();
+  elementoUl.appendChild(tmp);
+}
