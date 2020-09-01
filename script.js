@@ -34,4 +34,23 @@ function getRandomColor() {
   }
   return color;
 }
-var newColor = getRandomColor(); // #E943F0
+
+function trocaCor(){
+  var corAleatoria = getRandomColor();
+  quadrado.style.backgroundColor = corAleatoria;
+  //troca o html de dentro do meu quadrado
+  quadrado.innerHTML = 'Quadrado '+ corAleatoria;
+}
+
+quadrado.onmousemove = trocaCor;
+//onmouseover = quando o mouse entra no elemento
+//onmousemove = quando o mouse se mexe no elemento
+
+var nomes = ["Diego", "Gabriel", "Lucas"];
+
+var elementoUl = document.createElement('ul');
+elementoUl.setAttribute('li', nomes);
+var divBotao = document.querySelector("div#botao");
+divBotao.appendChild(elementoUl);
+
+console.log(elementoUl);
